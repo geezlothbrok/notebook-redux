@@ -15,6 +15,7 @@ function EditNotes (props) {
             ...state,
             [event.target.name] : event.target.value,
         });
+        console.log(state);
     };
 
      function handleSubmit () {

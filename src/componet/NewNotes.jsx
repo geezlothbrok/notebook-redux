@@ -22,7 +22,7 @@ class NewNotes extends Component {
     handleSubmit =() => {
         
 
-        this.props.addNewNotes (this.state);
+        //this.props.addNewNotes (this.state);
 
         let noteId= 10000 + Math.random() * 100000;
         let notes = { ...this.state, id: noteId};

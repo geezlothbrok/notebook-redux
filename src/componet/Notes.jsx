@@ -45,7 +45,7 @@ function Notes(props) {
                 </Modal.Header>
                 <Modal.Body>
                     <EditNotes
-                        note={props.note}
+                        notes={props.notes}
 
                         hideModal={hideModal} />
                 </Modal.Body>

@@ -7,20 +7,21 @@ const noteReducers = (state = initialState, action) => {
         case "ADD_NOTES":
            return { ...state,notes: [...state.notes, action.payload]};
             
-        case 'EDIT_NOTES' :
+        case 'EDIT_NOTE' :
             var id = action.payload.id;
-            let updatedNotesInfo = action.payload.upadtedNotesInfo
+            let updatedNoteInfo = action.payload.upadtedNoteInfo
             let NotesAfterUpdate = state.notes.map((notes) => {
                 if (notes.id === id) {
-                  return updatedNotesInfo;
+                  return updatedNoteInfo;
                 }
                 return notes;
               });
                 return { notes: NotesAfterUpdate };  
 
-        case 'DELETE_NOTES' :
+        case 'DELETE_NOTE' :
             var id = action.payload;
             let NotesAfterDelete=state.notes.filter((notes) => notes.id !==id);
+            console.log('NotesAfterDelete', NotesAfterDelete);
             return { notes: NotesAfterDelete };
 
     
