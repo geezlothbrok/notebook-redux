@@ -1,32 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
-import NewNotes from './componet/NewNotes';
-import NoteList from './componet/NoteList';
-import {useState} from 'react';
+import React from 'react';
+import {BrowserRouter, Route} from 'react-router-dom';
+import Dashboard from './pages/Dashboard';
+import Login from './pages/Login';
+import Signup from './pages/Signup';
 
-function App() {
-
-  const [notes, setUsers]= useState([]);
-
-  function addNewNotes (note) {
-    setUsers([...notes, note]);  
-  }
-
+export default function App() {
   return (
     <div>
-      <div className ='container'>
-        <h3 className='head_Nav'>NoteBook</h3 >
-        
-          <div className ='col-md-4'>
-            <NewNotes />
-          </div>
-        
-        <div className ='col-md-8'>
-          <NoteList />
-        </div>
-      </div>
+      <BrowserRouter>
+        <Route exact path = "/" component ={Dashboard}></Route>
+        <Route path = "/login" component ={Login}></Route>
+        <Route path = "/signup" component ={Signup}></Route>
+      </BrowserRouter>
+      
     </div>
-  );
+  )
 }
 
-export default App;
