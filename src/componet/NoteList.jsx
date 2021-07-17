@@ -1,6 +1,8 @@
-import react from 'react'
+import React from 'react'
 import Notes from './Notes';
 import { connect } from 'react-redux';
+import { getAllNotes } from '../actions/noteActions';
+
 
 
 
@@ -18,5 +20,8 @@ function NoteList(props) {
 function mapStateToProps (state) {
     return {notesData:state.notes}
 }
+const mapDispatchToProps = {
+    getAllNotes,
+  };
 
-export default connect(mapStateToProps, {})(NoteList);
+export default connect(mapStateToProps, mapDispatchToProps)(NoteList);
